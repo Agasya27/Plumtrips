@@ -45,16 +45,16 @@ export function PopularDestinations() {
         {/* Destinations Carousel */}
         <div className="relative">
           {/* Navigation Arrow Left */}
-          <button className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-10 h-10 bg-white border border-border rounded-full flex items-center justify-center shadow-md hover:shadow-lg transition-shadow">
+          <button className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-10 h-10 bg-white border border-border rounded-full items-center justify-center shadow-md hover:shadow-lg transition-shadow">
             <ChevronLeft className="w-5 h-5 text-foreground" />
           </button>
 
           {/* Destinations Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
+          <div className="flex gap-4 overflow-x-auto pb-2 md:grid md:grid-cols-3 lg:grid-cols-5 md:gap-5 md:overflow-visible">
             {destinations.map((dest) => (
               <div
                 key={dest.name}
-                className="group cursor-pointer"
+                className="group cursor-pointer min-w-[180px] md:min-w-0"
               >
                 {/* Image */}
                 <div className="aspect-[3/4] rounded-xl overflow-hidden mb-3 bg-muted">
@@ -77,7 +77,7 @@ export function PopularDestinations() {
           </div>
 
           {/* Navigation Arrow Right */}
-          <button className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-10 h-10 bg-white border border-border rounded-full flex items-center justify-center shadow-md hover:shadow-lg transition-shadow">
+          <button className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-10 h-10 bg-white border border-border rounded-full items-center justify-center shadow-md hover:shadow-lg transition-shadow">
             <ChevronRight className="w-5 h-5 text-foreground" />
           </button>
         </div>

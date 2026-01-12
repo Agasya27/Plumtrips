@@ -11,7 +11,7 @@ export function Footer() {
     <footer className="bg-[#1a2332] text-white">
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
           {/* Brand Column */}
           <div>
             <a href="#" className="inline-block mb-4 bg-white rounded px-2 py-1">
@@ -56,7 +56,7 @@ export function Footer() {
             <p className="text-sm text-white/50">
               © 2026 PlumTrips India Pvt. Ltd. All rights reserved.
             </p>
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-6 flex-wrap justify-center sm:justify-end">
               <a href="#" className="text-sm text-white/50 hover:text-white transition-colors">
                 Privacy Policy
               </a>

@@ -36,7 +36,7 @@ export function TripConfigForm({
       {/* Row 1: Main Form Fields - Horizontal like PlumTrips */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {/* Destination */}
-        <div className="border-r border-border pr-4 lg:border-r">
+        <div className="p-4 rounded-lg border border-border bg-muted/30 sm:bg-transparent sm:p-0 sm:border-none lg:border-r lg:pr-4 lg:rounded-none">
           <label className="flex items-center gap-1.5 text-xs text-muted-foreground mb-2">
             <MapPin className="w-3.5 h-3.5 text-primary" />
             Destination
@@ -57,7 +57,7 @@ export function TripConfigForm({
         </div>
 
         {/* Number of Days */}
-        <div className="border-r border-border pr-4 lg:border-r">
+        <div className="p-4 rounded-lg border border-border bg-muted/30 sm:bg-transparent sm:p-0 sm:border-none lg:border-r lg:pr-4 lg:rounded-none">
           <label className="flex items-center gap-1.5 text-xs text-muted-foreground mb-2">
             <Calendar className="w-3.5 h-3.5 text-primary" />
             Duration
@@ -81,7 +81,7 @@ export function TripConfigForm({
         </div>
 
         {/* Number of Travelers */}
-        <div className="border-r border-border pr-4 lg:border-r">
+        <div className="p-4 rounded-lg border border-border bg-muted/30 sm:bg-transparent sm:p-0 sm:border-none lg:border-r lg:pr-4 lg:rounded-none">
           <label className="flex items-center gap-1.5 text-xs text-muted-foreground mb-2">
             <Users className="w-3.5 h-3.5 text-primary" />
             Travelers
@@ -107,7 +107,7 @@ export function TripConfigForm({
         </div>
 
         {/* Hotel Type Selector */}
-        <div>
+        <div className="p-4 rounded-lg border border-border bg-muted/30 sm:bg-transparent sm:p-0 sm:border-none lg:rounded-none">
           <label className="flex items-center gap-1.5 text-xs text-muted-foreground mb-2">
             <Building className="w-3.5 h-3.5 text-primary" />
             Hotel Type

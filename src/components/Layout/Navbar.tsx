@@ -1,4 +1,5 @@
-import { Plane, Building2, Palmtree, Bus, FileText, MoreHorizontal, HelpCircle, User } from 'lucide-react';
+import { useState } from 'react';
+import { Plane, Building2, Palmtree, Bus, FileText, MoreHorizontal, HelpCircle, User, Menu, X } from 'lucide-react';
 import plumtripsLogo from '@/assets/plumtrips-logo.png';
 
 const navItems = [
@@ -11,12 +12,17 @@ const navItems = [
 ];
 
 export function Navbar() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const handleToggleMobileMenu = () => setIsMobileMenuOpen((prev) => !prev);
+  const handleCloseMobileMenu = () => setIsMobileMenuOpen(false);
+
   return (
     <header className="bg-white border-b border-border sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-14">
           {/* Logo */}
-          <a href="#" className="flex items-center">
+          <a href="#" className="flex items-center" onClick={handleCloseMobileMenu}>
             <img 
               src={plumtripsLogo} 
               alt="PlumTrips logo" 
@@ -72,8 +78,48 @@ export function Navbar() {
               </div>
               <span className="hidden sm:inline">Login or Signup</span>
             </a>
+            <button
+              type="button"
+              className="md:hidden w-10 h-10 rounded-full border border-border flex items-center justify-center text-foreground hover:text-primary transition-colors"
+              aria-label="Toggle navigation"
+              onClick={handleToggleMobileMenu}
+            >
+              {isMobileMenuOpen ? <X className="w-5 h-5" strokeWidth={2} /> : <Menu className="w-5 h-5" strokeWidth={2} />}
+            </button>
           </div>
         </div>
+        {isMobileMenuOpen && (
+          <nav className="md:hidden border-t border-border pb-4">
+            <ul className="flex flex-col gap-1 pt-4">
+              {navItems.map((item) => (
+                <li key={item.label}>
+                  <a
+                    href="#"
+                    onClick={handleCloseMobileMenu}
+                    className={`flex items-center gap-3 px-3 py-3 rounded-lg text-sm font-medium transition-colors ${
+                      item.active
+                        ? 'bg-primary/5 text-primary'
+                        : 'text-foreground hover:bg-muted/60'
+                    }`}
+                  >
+                    <item.icon className="w-4 h-4" strokeWidth={1.5} />
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+              <li>
+                <a
+                  href="#"
+                  onClick={handleCloseMobileMenu}
+                  className="flex items-center gap-3 px-3 py-3 rounded-lg text-sm font-medium text-foreground hover:bg-muted/60 transition-colors"
+                >
+                  <MoreHorizontal className="w-4 h-4" strokeWidth={1.5} />
+                  More Options
+                </a>
+              </li>
+            </ul>
+          </nav>
+        )}
       </div>
     </header>
   );

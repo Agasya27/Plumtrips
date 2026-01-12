@@ -60,7 +60,7 @@ export function TripPlanner() {
               <button
                 onClick={searchTripPlan}
                 disabled={!isValid}
-                className="bg-primary text-white font-medium px-10 py-3 rounded text-sm hover:bg-primary/90 disabled:bg-muted disabled:text-muted-foreground disabled:cursor-not-allowed transition-colors min-w-[140px]"
+                className="bg-primary text-white font-medium px-6 py-3 rounded text-sm hover:bg-primary/90 disabled:bg-muted disabled:text-muted-foreground disabled:cursor-not-allowed transition-colors w-full sm:w-auto sm:min-w-[140px]"
               >
                 Search
               </button>
